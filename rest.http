@@ -1,0 +1,23 @@
+###
+GET http://localhost:1334/api/v1/checkhealth
+
+###
+GET http://localhost:1334/api/v1/checkhealth1
+
+###
+POST http://localhost:1334/api/v1/auth/signup
+Content-Type: application/json
+
+{
+    email: 'quan',
+    password: '123abc',
+}
+
+###
+POST http://localhost:1334/api/v1/auth/signin
+Content-Type: application/json
+
+{
+    email: 'quan',
+    password: '123abc',
+}
