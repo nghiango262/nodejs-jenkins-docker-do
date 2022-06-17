@@ -22,6 +22,7 @@ pipeline {
         sh "pwd"
         sh "node -v"
         sh "yarn -v"
+        sh "docker -v"
         sh "yarn"
       }
     }
