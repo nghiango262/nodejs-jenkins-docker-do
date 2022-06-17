@@ -1,5 +1,10 @@
 pipeline {
-  agent any 
+  agent {
+    docker {
+      image 'node:14-alpine'
+      args '-u 0:0 -v /tmp:/root/.cache'
+    }
+  } 
 
   stages {
     stage("Test") {
@@ -11,7 +16,7 @@ pipeline {
     stage("Build") {
       steps {
         echo "yarn install"
-        echo "yarn build"
+        sh "npm install"
       }
     }
 
