@@ -10,32 +10,33 @@ pipeline {
     DOCKER_IMAGE = 'ntnghiant' 
   }
 
+
+  stages {
+    stage("Clone") {
+      steps {
+        echo "clone app"
+        git 'https://github.com/nghiango262/nodejs-jenkins-docker-do.git'
+      }
+    }
+
   stages {
     stage("Test") {
       steps {
         echo "yarn test"
+        sh "ls -la"
       }
     }
     
     stage("Build") {
       steps {
-<<<<<<< HEAD
-        sh "npm install"
-        sh "npm build"
-=======
         echo "yarn install"
         echo "npm install"
->>>>>>> 329d4884957acf7280145a5a80724ddfe14bb015
       }
     }
 
     stage("Deploy") {
       steps {
-<<<<<<< HEAD
-        sh "npm start"
-=======
         echo "yarn start"
->>>>>>> 329d4884957acf7280145a5a80724ddfe14bb015
       }
     }
   } 
