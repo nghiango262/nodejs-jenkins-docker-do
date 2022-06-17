@@ -18,13 +18,14 @@ pipeline {
         sh "ls -la"
         sh "pwd"
         sh "node -v"
+        sh "npm -v"
       }
     }
     
     stage("Build") {
       steps {
         echo "yarn install"
-        echo "npm install"
+        sh "npm install"
       }
     }
 
