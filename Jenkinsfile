@@ -23,7 +23,7 @@ pipeline {
         sh "node -v"
         sh "yarn -v"
         sh "yarn"
-        sh "ls -la /"
+        sh "ls -la ~"
       }
     }
     
