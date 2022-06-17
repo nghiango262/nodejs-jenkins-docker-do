@@ -16,6 +16,7 @@ pipeline {
       steps {
         echo "yarn test"
         sh "ls -la"
+        sh "pwd"
       }
     }
     
