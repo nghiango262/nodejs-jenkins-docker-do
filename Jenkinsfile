@@ -4,6 +4,9 @@ pipeline {
       image 'node:14-alpine'
       args '-u 0:0 -v /tmp:/root/.cache'
     }
+    node {
+      label 'main'
+    }
   } 
   
   environment {
