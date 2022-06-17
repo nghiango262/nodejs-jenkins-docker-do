@@ -1,13 +1,5 @@
 pipeline {
-  agent {
-    docker {
-      image 'node:14-alpine'
-      args '-u 0:0 -v /tmp:/root/.cache'
-    }
-    node {
-      label 'main'
-    }
-  } 
+  agent none 
   
   environment {
     DOCKER_IMAGE = 'ntnghiant/nodejs-jenkins-docker-do' 
@@ -15,18 +7,29 @@ pipeline {
 
   stages {
     
-    stage("Test") {
+
+    stage("Install packages") {
+      agent {
+        docker {
+          image 'node:14-alpine'
+          args '-u 0:0 -v /tmp:/root/.cache'
+        }
+      }
+
       steps {
         echo "yarn test"
         sh "ls -la"
         sh "pwd"
         sh "node -v"
         sh "yarn -v"
-        sh "docker ps -a"
+        sh "yarn"
       }
     }
     
     stage("Build") {
+      agent {
+        node { label 'main'}
+      }
       environment {
         DOCKER_TAG="${GIT_BRANCH.tokenize('/').pop()}-${GIT_COMMIT.substring(0,7)}"
       }
