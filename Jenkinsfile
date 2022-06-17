@@ -20,7 +20,7 @@ pipeline {
     stage("Build") {
       steps {
         echo "yarn install"
-        sh "npm install"
+        echo "npm install"
       }
     }
 
