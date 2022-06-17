@@ -5,6 +5,10 @@ pipeline {
       args '-u 0:0 -v /tmp:/root/.cache'
     }
   } 
+  
+  environment {
+    DOCKER_IMAGE = 'ntnghiant' 
+  }
 
   stages {
     stage("Test") {
