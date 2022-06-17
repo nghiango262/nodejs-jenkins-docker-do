@@ -24,14 +24,14 @@ pipeline {
     
     stage("Build") {
       steps {
-        sh "npm install"
-        sh "npm build"
+        sh "yarn"
+        sh "yarn build"
       }
     }
 
     stage("Deploy") {
       steps {
-        sh "npm start"
+        sh "yarn start"
       }
     }
   } 
