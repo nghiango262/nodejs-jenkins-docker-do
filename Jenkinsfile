@@ -11,12 +11,6 @@ pipeline {
   }
 
   stages {
-    stage("Clone") {
-      steps {
-        echo "clone app"
-        git 'https://github.com/nghiango262/nodejs-jenkins-docker-do.git'
-      }
-    }
     
     stage("Test") {
       steps {
