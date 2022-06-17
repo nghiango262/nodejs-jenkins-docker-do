@@ -17,6 +17,7 @@ pipeline {
         echo "yarn test"
         sh "ls -la"
         sh "pwd"
+        sh "node -v"
       }
     }
     
