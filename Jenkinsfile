@@ -10,7 +10,6 @@ pipeline {
     DOCKER_IMAGE = 'ntnghiant' 
   }
 
-
   stages {
     stage("Clone") {
       steps {
@@ -18,8 +17,7 @@ pipeline {
         git 'https://github.com/nghiango262/nodejs-jenkins-docker-do.git'
       }
     }
-
-  stages {
+    
     stage("Test") {
       steps {
         echo "yarn test"
