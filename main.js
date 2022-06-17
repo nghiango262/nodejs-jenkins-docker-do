@@ -4,10 +4,11 @@ import "./v1/databases/connection.mongodb";
 import routerV1 from "./v1/routes";
 
 //preload
+/*
 dotenv.config({
   path: "./config/example.env",
 });
-
+*/
 process.on("uncaughtException", (e) => {
   console.error(e);
 });
